@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--定义html5的文档类型  指令-->
+<html lang="zh-CN">
+<!--html根标签  双标签-->
+
+<head>
+	<!--头部标签  写给我们的游览器和搜索引擎看的-->
+	<title>guoguo</title>
+	<!--网页的标题-->
+	<meta charset="UTF-8">
+	<!--网页的编码格式 万国码-->
+	<meta name="keywords" content="html5 css3">
+	<meta name="description" content="这是一个网页">
+	<link href="css/2.css" rel="stylesheet" type="text/css" id="css">
+</head>
+<style type="text/css">
+	* {
+		transition: 2s;
+	}
+
+	.change {
+		position: absolute;
+		top: 100px;
+		right: 100px;
+		background-color: pink;
+		width: 100px;
+		height: 100px;
+		font-size: 20px;
+		border-radius: 50%;
+		text-align: center;
+		line-height: 100px;
+		cursor: pointer;
+	}
+	.back,.continue{
+		position:absolute;
+		top:50px;
+		left:35px;
+		background-color: white;
+		padding:10px 15px ;
+		border-radius: 10px;
+		display: block;
+	}
+	.continue{
+		bottom:50px;
+		right:35px;
+		top:auto;
+		left:auto;
+	}
+</style>
+<!--网页的主体内容  存放用户看到的所有内容-->
+
+<body>
+	<div class="wrap cube">
+		<div class="small1 small"></div>
+		<div class="small1 small"></div>
+		<div class="small1 small"></div>
+		<div class="small1 small"></div>
+		<div class="small1 small"></div>
+		<div class="small1 small"></div>
+
+
+		<div class="small1 big"></div>
+		<div class="small1 big"></div>
+		<div class="small1 big"></div>
+		<div class="small1 big"></div>
+		<div class="small1 big"></div>
+		<div class="small1 big"></div>
+
+	</div>
+	<div class="change">点击切换</div>
+	<a href="https://guoyxuan.github.io/experiment/sports/" class="back">返回</a>
+	<a href="https://keriaohh.github.io/xdcs/" class="continue">继续</a>
+
+	<!-- <a href="#" onClick="change(1)">1.css</a> <a href="#" onClick="change(2)">2.css</a> -->
+	<script src="js/1.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		let type = 2
+		document.querySelector(".change").onclick = () => {
+			if (type === 1) {
+				type = 2
+			} else {
+				type = 1
+			}
+			change(type)
+		}
+	</script>
+</body>
+
+</html>
