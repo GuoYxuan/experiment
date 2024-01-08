@@ -1,176 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>杭州亚运</title>
-		<link rel="stylesheet" href="./compiled/flipclock.css">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>杭州亚运</title>
+	<link rel="stylesheet" href="./compiled/flipclock.css">
 
-		<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery.min.js"></script>
 
-		<script src="./compiled/flipclock.js"></script>
-		<style>
-			body {
-				margin: 0;
-				padding: 0;
-				height: 100vh;
-				background: url(./image/bg.jpg) center/cover;
-				overflow: hidden;
-			}
+	<script src="./compiled/flipclock.js"></script>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+			background: url(./image/bg.jpg) center/cover;
+			overflow: hidden;
+		}
 
+		.chat {
+			position: absolute;
+			width: 40%;
+			top: 100px;
+			left: 120px;
+		}
+
+		.chat div {
+			display: flex;
+			align-items: center;
+		}
+
+		.chat img {
+			width: 120px;
+			height: 120px;
+		}
+
+		.message0,
+		.message {
+			font-size: 20px;
+			position: relative;
+			border: 2px solid #000;
+			border-radius: 15px 10px 16px 14px;
+			padding: 15px 20px;
+			background-color: #fff;
+			transition: opacity 1s ease;
+		}
+
+		.message1 {
+			margin-left: 20px;
+			transition: opacity 1s ease;
+			/* 渐变效果，时长500毫秒 */
+		}
+
+		.message2 {
+			margin-right: 20px;
+			background-color: rgb(8, 193, 171);
+		}
+
+		.jump {
+			position: absolute;
+			right: -20px;
+			bottom: 50px;
+		}
+
+		.jump img {
+			width: 400px;
+		}
+
+		.jump a {
+			display: inline-block;
+			text-decoration: none;
+			color: #fff;
+			font-size: 20px;
+			background-color: pink;
+			border-radius: 10px;
+			padding: 10px 20px;
+			transform: translateY(-20px);
+		}
+
+		@media screen and (max-width: 768px) {
 			.chat {
-				position: absolute;
-				width: 40%;
-				top: 100px;
-				left: 120px;
-			}
-
-			.chat div {
-				display: flex;
-				align-items: center;
-			}
-
-			.chat img {
-				width: 120px;
-				height: 120px;
-			}
-
-			.message0{
-				font-size: 20px;
-				position: relative;
-				border: 2px solid #000;
-				border-radius: 15px 10px 16px 14px;
-				padding: 15px 20px;
-				background-color: #fff;
-				transition: opacity 1s ease;
-			}
-
-			.message1 {
-				margin-left: 20px;
-				transition: opacity 1s ease;
-				/* 渐变效果，时长500毫秒 */
-			}
-
-			.message2 {
-				margin-right: 20px;
-				background-color: rgb(8, 193, 171);
+				width: 100%;
+				left: 20px;
 			}
 
 			.jump {
-				position: absolute;
-				right: -20px;
-				bottom: 50px;
+				right: -115px;
 			}
 
 			.jump img {
-				width: 400px;
+				width: 320px;
 			}
+		}
 
-			.jump a {
-				display: inline-block;
-				text-decoration: none;
-				color: #fff;
-				font-size: 20px;
-				background-color: pink;
-				border-radius: 10px;
-				padding: 10px 20px;
-				transform: translateY(-20px);
-			}
+		.chat .hidden {
+			opacity: 0;
+			pointer-events: none;
+		}
 
-			@media screen and (max-width: 768px) {
-				.chat {
-					width: 100%;
-					left: 20px;
-				}
+		.img1,
+		.img2 {
+			cursor: pointer;
+		}
 
-				.jump {
-					right: -115px;
-				}
+		.start {
+			margin: 0 auto;
+			display: block;
+		}
 
-				.jump img {
-					width: 320px;
-				}
-			}
+		.clock-box {
+			position: absolute;
+			right: 20px;
+			top: 15px;
+		}
+	</style>
+</head>
 
-			.chat .hidden {
-				opacity: 0;
-				pointer-events: none;
-			}
-
-			.img1,
-			.img2 {
-				cursor: pointer;
-			}
-			.start{
-				    margin: 0 auto;
-    display: block;}
-			.clock-box{
-				    position: absolute;
-    right: 20px;
-    top: 15px;}
-		</style>
-	</head>
-
-	<body>
-		<div class="chat">
-			<div>
-				<img src="./image/lianlian.png" alt="" class="img1">
-				<div class="message0 message1 hidden">开幕式快开始了！</div>
-			</div>
-			<div>
-				<div class="message0 message2 hidden">让我们快进去吧~</div>
-				<img src="./image/congcong.png" alt="" class="img2">
-			</div>
+<body>
+	<div class="chat">
+		<div>
+			<img src="./image/lianlian.png" alt="" class="img1">
+			<div class="message0 message1 hidden">开幕式快开始了！</div>
 		</div>
-		<div class="jump">
-			<a href="https://GuoYxuan.github.io/experiment/donghua">点击前往</a>
-			<img src="./image/congcongBig.png" alt="">
+		<div>
+			<div class="message0 message2 hidden">让我们快进去吧~</div>
+			<img src="./image/congcong.png" alt="" class="img2">
 		</div>
-		<div class="clock-box">
+	</div>
+	<div class="jump">
+		<a href="https://GuoYxuan.github.io/experiment/donghua">点击前往</a>
+		<img src="./image/congcongBig.png" alt="">
+	</div>
+	<div class="clock-box">
 		<div class="clock" style="margin:2em;"></div>
-	<div class="message"></div>
+		<div class="message"></div>
 
-	<button class="start">亚运倒计时</button></div>
-		<script>
-			var clock;
-		
-		$(document).ready(function() {
-			
+		<button class="start">亚运倒计时</button>
+	</div>
+	<script>
+		var clock;
+
+		$(document).ready(function () {
+
 			clock = $('.clock').FlipClock(10, {
-		        clockFace: 'MinuteCounter',
-		        countdown: true,
-		        autoStart: false,
-		        callbacks: {
-		        	start: function() {
-		        		$('.message').html('倒计时开始');
-		        	}
-		        }
-		    });
+				clockFace: 'MinuteCounter',
+				countdown: true,
+				autoStart: false,
+				callbacks: {
+					start: function () {
+						$('.message').html('倒计时开始');
+					}
+				}
+			});
 
-		    $('.start').click(function(e) {
+			$('.start').click(function (e) {
 
-		    	clock.start();
-		    });
+				clock.start();
+			});
 
 		});
-			document.querySelector('.img1').addEventListener('click', function() {
-				var messageDiv = document.querySelector('.message1') // 获取相邻的div元素
-				if (messageDiv.classList.contains('hidden')) {
-					messageDiv.classList.remove('hidden');
-				} else {
-					messageDiv.classList.add('hidden');
-				}
-			});
-			document.querySelector('.img2').addEventListener('click', function() {
-				var messageDiv = document.querySelector('.message2') // 获取相邻的div元素
-				if (messageDiv.classList.contains('hidden')) {
-					messageDiv.classList.remove('hidden');
-				} else {
-					messageDiv.classList.add('hidden');
-				}
-			});
-		</script>
-	</body>
+		// document.querySelector('.img1').addEventListener('click', function () {
+		// 	var messageDiv = document.querySelector('.message1') // 获取相邻的div元素
+		// 	if (messageDiv.classList.contains('hidden')) {
+		// 		messageDiv.classList.remove('hidden');
+		// 	} else {
+		// 		messageDiv.classList.add('hidden');
+		// 	}
+		// });
+		// document.querySelector('.img2').addEventListener('click', function () {
+		// 	var messageDiv = document.querySelector('.message2') // 获取相邻的div元素
+		// 	if (messageDiv.classList.contains('hidden')) {
+		// 		messageDiv.classList.remove('hidden');
+		// 	} else {
+		// 		messageDiv.classList.add('hidden');
+		// 	}
+		// });
+		$('.img1').click(function () {
+			var messageDiv = $('.message1');
+			if (messageDiv.hasClass('hidden')) {
+				messageDiv.removeClass('hidden');
+			} else {
+				messageDiv.addClass('hidden');
+			}
+		});
+
+		$('.img2').click(function () {
+			var messageDiv = $('.message2');
+			if (messageDiv.hasClass('hidden')) {
+				messageDiv.removeClass('hidden');
+			} else {
+				messageDiv.addClass('hidden');
+			}
+		});
+
+	</script>
+</body>
 
 </html>
