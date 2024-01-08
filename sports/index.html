@@ -36,7 +36,7 @@
 				height: 120px;
 			}
 
-			.message {
+			.message0{
 				font-size: 20px;
 				position: relative;
 				border: 2px solid #000;
@@ -116,10 +116,10 @@
 		<div class="chat">
 			<div>
 				<img src="./image/lianlian.png" alt="" class="img1">
-				<div class="message message1 hidden">开幕式快开始了！</div>
+				<div class="message0 message1 hidden">开幕式快开始了！</div>
 			</div>
 			<div>
-				<div class="message message2 hidden">让我们快进去吧~</div>
+				<div class="message0 message2 hidden">让我们快进去吧~</div>
 				<img src="./image/congcong.png" alt="" class="img2">
 			</div>
 		</div>
@@ -143,7 +143,7 @@
 		        autoStart: false,
 		        callbacks: {
 		        	start: function() {
-		        		$('.message').html('The clock has started!');
+		        		$('.message').html('倒计时开始');
 		        	}
 		        }
 		    });
